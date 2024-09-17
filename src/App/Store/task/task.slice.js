@@ -11,6 +11,7 @@ export const taskSlice = createSlice({
     addTask: (state, {payload}) => {
       const tasks = {
         id: Math.random() * 100,
+        status: false,
         text: payload,
       };
       console.log(tasks)
@@ -20,6 +21,11 @@ export const taskSlice = createSlice({
     remoteTask: (state, {payload}) => {
       state.list = state.list.filter((task) => task.id !== payload);
       state.count -= 1;
+    },
+    toggleCompletedStatus: (state, {payload}) => {
+      const index = state.list.findIndex(task => task.id === payload);
+      state.list[index].status = !state.list[index].status;
+      console.log(state.list[index].status);
     },
   },
 });

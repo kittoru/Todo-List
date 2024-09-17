@@ -16,12 +16,15 @@ function App() {
   const handelTaskAdd = (value) => {
     dispatch(actions.addTask(value));
   }
+  const toggleStatus = (id) => {
+    dispatch(actions.toggleCompletedStatus(id));
+  }
   return (
     <div className="App">
       <Form handelTaskAdd={handelTaskAdd} />
       <ul>
         {count > 0 && tasks.map((task) => {
-          return <Item text={task.text} id={task.id} onCheck={handelTaskDone} />
+          return <Item text={task.text} id={task.id} status={task.status} onCheck={handelTaskDone} toggleStatus={toggleStatus}/>
         })}
         {count === 0 && <p>No tasks</p>}
       </ul>

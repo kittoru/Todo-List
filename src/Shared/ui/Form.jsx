@@ -8,11 +8,12 @@ export const Form = ( {handelTaskAdd} ) => {
   const handelClick = (e) => {
     e.preventDefault();
     handelTaskAdd(value);
+    setValue('');
   }
 
   return ( 
     <form className="form" onSubmit={handelClick}>
-      <input type="text" onInput={(e) => setValue(e.target.value)}/>
+      <input type="text" value={value} onInput={(e) => setValue(e.target.value)}/>
       <button type="submit" >Add</button>
     </form>
    );
