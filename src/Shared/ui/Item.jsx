@@ -1,5 +1,6 @@
 import { useState } from "react";
 import ReactModal from "react-modal";
+import { Modal } from "./Modal";
 
 
 export const Item = ( {id, text, status, onCheck, toggleStatus, updateTask } ) => {
@@ -8,10 +9,8 @@ export const Item = ( {id, text, status, onCheck, toggleStatus, updateTask } ) =
   const deleteTask = () => {
     onCheck(id);
   };
-  const handelClick =(e) => {
-    e.preventDefault();
+  const handelClick =(value) => {
     updateTask({id, text: value});
-    closeModal();
   };
   const openModal =() => {
     setModal(true);
@@ -26,12 +25,7 @@ export const Item = ( {id, text, status, onCheck, toggleStatus, updateTask } ) =
       <label className={status? 'item-completed' : ''}>{text}</label>
       <button onClick={deleteTask}>del</button>
       <button onClick={openModal}>Update</button>
-      <ReactModal isOpen={modal} onRequestClose={closeModal}>
-        <form>
-          <input type="text" value={value} onInput={(e) => setValue(e.target.value)}/>
-          <button onClick={handelClick}>save</button>
-        </form>
-      </ReactModal>
+      <Modal status={modal} close={closeModal} getData={handelClick} text={text} />
     </li>
    );
 }
