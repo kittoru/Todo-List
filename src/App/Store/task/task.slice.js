@@ -27,6 +27,10 @@ export const taskSlice = createSlice({
       state.list[index].status = !state.list[index].status;
       console.log(state.list[index].status);
     },
+    updateTask: (state, {payload}) => {
+      const index = state.list.findIndex(task => task.id === payload.id);
+      state.list[index].text = payload.text;
+    },
   },
 });
 
