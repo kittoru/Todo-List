@@ -1,0 +1,51 @@
+@import '../../App//Styles/variables', '../../App///Styles/mixins';
+
+.modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0 auto;
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.164);
+  & .content {
+    padding: 20px;
+    border-radius: 20px;
+    background-color: white;
+    & h1 {
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 15px;
+    }
+  }
+
+  & .form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    & .actions {
+      display: flex;
+      justify-content: end;
+      gap: 10px;
+    }
+  }
+
+  & .button {
+    background-color: $color-gray-light;
+    color: $color-gray;
+    border: 2px solid $color-gray-light;
+
+    &:hover,
+    &:active {
+      @include buttonAnimation(gradientAnimation, $color-gray-light, black);
+      animation: gradientAnimation 0.5s ease-out;
+      color: white;
+      background-color: black;
+      border: 2px solid black;
+    }
+  }
+
+
+}
+

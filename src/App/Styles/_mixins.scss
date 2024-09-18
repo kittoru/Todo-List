@@ -1,0 +1,12 @@
+@import './variables';
+
+@mixin buttonAnimation($name, $color-start, $color-end) {
+  @keyframes #{$name} {
+    0% {
+      background-color: $color-start;
+    }
+    100% {
+      background-color: $color-end;
+    }
+  }
+}

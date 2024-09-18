@@ -1,0 +1,118 @@
+@import '../../App/Styles/variables';
+
+.item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 426px;
+  padding: 10px 13px;
+  font-size: 14px;
+  font-weight: 400;
+  border-radius: 10px;
+  border: 2px solid white;
+  
+  &:active,
+  &:hover,
+  &:focus {
+    border: 2px solid black;
+    animation: itemFalseShow 0.7s ease;
+    .actions {
+      opacity: 1;
+    }
+  }
+  &.completed {
+    border: 2px solid transparent;
+    background-color: $color-gray-light;
+    &:hover {
+      background-color: white;
+      animation: itemTrueShow 0.3s ease;
+    }
+  }
+  @keyframes itemFalseShow {
+    0% {
+      border: 2px solid white;
+    }
+    100% {
+      border: 2px solid black;
+    }
+  }
+  @keyframes itemTrueShow {
+    0% {
+      background-color: $color-gray-light;
+    }
+    100% {
+      background-color: white;
+    }
+  }
+}
+
+.form {
+  display: flex;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.input {
+  width: auto;
+  cursor: pointer;
+  opacity: 0;
+  position: absolute;
+  &:checked {
+    &+.lable {
+      font-weight: 600;
+    }
+    &+.lable::before {
+      content: url('../assets/checked.svg');
+    }
+  }
+}
+
+.lable {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+
+  &::before {
+    content: url('../assets/noChecked.svg');
+    margin-right: 5px;
+    width: 18px;
+    height: 18px;
+  }
+}
+
+.actions {
+  opacity: 0;
+  display: flex;
+  gap: 5px;
+  & .action {
+    cursor: pointer;
+    padding: 0;
+    width: 26px;
+    height: 26px;
+    border: none;
+    border-radius: 5px;
+    background-color: transparent;
+      
+  }
+}
+
+.delete {
+  background-image: url('../assets/delete.svg');
+  background-position: center;
+  background-repeat: no-repeat;
+
+  &:hover {
+    background-image: url('../assets/delete-active.svg');
+    background-color: $color-gray-light;
+  }
+}
+
+.edit {
+  background-image: url('../assets/edit.svg');
+  background-position: center;
+  background-repeat: no-repeat;
+    &:hover {
+      background-image: url('../assets/edit-active.svg');
+      background-color: $color-gray-light;
+    }
+}
