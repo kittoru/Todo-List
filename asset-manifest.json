@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/Todo-List/static/css/main.14f32fd3.css",
+    "main.js": "/Todo-List/static/js/main.3790a4df.js",
+    "static/media/empty.png": "/Todo-List/static/media/empty.df0274ee16cf025ba43a.png",
+    "index.html": "/Todo-List/index.html",
+    "static/media/delete-active.svg": "/Todo-List/static/media/delete-active.31669d6ad8e2bb6c5c15.svg",
+    "static/media/delete.svg": "/Todo-List/static/media/delete.6e7abd35082d6dfe1e06.svg",
+    "static/media/edit.svg": "/Todo-List/static/media/edit.6da1d075c17108eceb3d.svg",
+    "static/media/edit-active.svg": "/Todo-List/static/media/edit-active.a45218cb95f4bdad700f.svg",
+    "static/media/checked.svg": "/Todo-List/static/media/checked.16145987a4cb0380f51c.svg",
+    "static/media/noChecked.svg": "/Todo-List/static/media/noChecked.53e9ffa6376fed428f80.svg",
+    "main.14f32fd3.css.map": "/Todo-List/static/css/main.14f32fd3.css.map",
+    "main.3790a4df.js.map": "/Todo-List/static/js/main.3790a4df.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.14f32fd3.css",
+    "static/js/main.3790a4df.js"
+  ]
+}
