@@ -1,6 +1,7 @@
 {
   "name": "todo-redux",
   "version": "0.1.0",
+  "homepage": "https://kittoru.github.io/Todo-List",
   "private": true,
   "dependencies": {
     "@reduxjs/toolkit": "^2.2.7",
