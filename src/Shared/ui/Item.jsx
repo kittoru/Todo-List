@@ -23,7 +23,7 @@ export const Item = ( {id, text, status, onCheck, toggleStatus, updateTask } ) =
   return ( 
     <li key={id} className={`${styles.item} ${status? styles.completed : ''}`} >
       <form className={styles.form}>
-        <input type="checkbox" id={id} className={styles.input} onClick={() => toggleStatus(id)}/>
+        <input type="checkbox" id={id}  checked={status} className={styles.input} onClick={() => toggleStatus(id)}/>
         <label for={id} className={styles.lable}>{text}</label>
       </form>
       <div className={styles.actions}>

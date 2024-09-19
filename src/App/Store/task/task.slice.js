@@ -9,13 +9,18 @@ export const taskSlice = createSlice({
   },
   reducers: {
     addTask: (state, {payload}) => {
-      const tasks = {
+      const task = {
         id: Math.random() * 100,
         status: false,
         text: payload,
       };
-      console.log(tasks)
-      state.list.push(tasks);
+      console.log(task)
+      if (state.count === 0) {
+        state.list.push(task);
+      } else {
+        const index = state.list.findIndex(item => item.status === true)
+        state.list.splice(index, 0, task);
+      }
       state.count += 1;
     },
     remoteTask: (state, {payload}) => {
@@ -25,7 +30,9 @@ export const taskSlice = createSlice({
     toggleCompletedStatus: (state, {payload}) => {
       const index = state.list.findIndex(task => task.id === payload);
       state.list[index].status = !state.list[index].status;
-      console.log(state.list[index].status);
+      const trueList = state.list.filter(task => task.status === true);
+      const falseList = state.list.filter(task => task.status === false);
+      state.list = [...falseList, ...trueList];
     },
     updateTask: (state, {payload}) => {
       const index = state.list.findIndex(task => task.id === payload.id);
