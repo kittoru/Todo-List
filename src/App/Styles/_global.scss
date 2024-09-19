@@ -37,6 +37,15 @@ input {
     border: 2px solid black;
     background-color: white;
   }
+  @media (max-width: 500px) {
+    max-width: 240px;
+    font-size: 12px;
+    font-weight: 500;
+    &::placeholder {
+      font-size: 12px;
+      font-weight: 500;
+    }
+  }
   @keyframes inputAnimation {
     0% {
       border: 2px solid $color-gray-light;
@@ -64,6 +73,11 @@ input {
     cursor: pointer;
     color: black;
     background-color: white;
+  }
+  @media (max-width: 500px) {
+    padding: 10px 15px;
+    font-size: 12px;
+    font-weight: 500;
   }
 }
 
